@@ -3,16 +3,16 @@ package lession_pack;
 public class objRoom
 {
     objRoom(){
-        roomName = new StringBuffer();
+
     }
 
 
-    StringBuffer roomName;
+    StringBuffer roomName = new StringBuffer();
     Integer roomArea;
     Integer roomHeidth;
     Integer roomWindowsCount;
     Integer roomCreaturesCount;
-    void roomAddCreature(Integer creatureHeidth, Integer creatureSize, StringBuffer CreatureName)
+    public void roomAddCreature(Integer creatureHeidth, Integer creatureSize, StringBuffer CreatureName)
     {
         if(creatureHeidth < roomHeidth && creatureSize < roomArea)
         {
@@ -21,15 +21,15 @@ public class objRoom
             System.out.println(CreatureName);
         }
     }
-    void roomAddWindow(Integer winCount){
+    public void roomAddWindow(Integer winCount){
         roomWindowsCount += winCount;
         System.out.println("добавлено" + winCount+ "окон" );
     }
-    void roomAddArea(Integer addArea){
+    public void roomAddArea(Integer addArea){
         roomArea += addArea;
         System.out.println("Добавлено" + addArea +"Квадратных метров");
     }
-    void roomParty()
+    public void roomParty()
     {
         if(roomWindowsCount > 2)
         {
@@ -40,7 +40,7 @@ public class objRoom
             System.out.println("недостаточно существ для вечеринки");
         }
     }
-    void roomWentOut(StringBuffer CreatureName)
+    public void roomWentOut(StringBuffer CreatureName)
     {
         if(roomCreaturesCount >= 1)
         {
