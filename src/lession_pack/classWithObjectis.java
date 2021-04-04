@@ -12,7 +12,6 @@ public class classWithObjectis {
         Integer roomHeidth;
         Integer roomWindowsCount;
         Integer roomCreaturesCount;
-
         void roomAddCreature(Integer creatureHeidth, Integer creatureSize, StringBuffer CreatureName)
         {
             if(creatureHeidth < roomHeidth && creatureSize < roomArea)
