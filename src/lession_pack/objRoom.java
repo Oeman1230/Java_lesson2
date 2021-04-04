@@ -6,6 +6,7 @@ public class objRoom
         roomName = new StringBuffer();
     }
 
+
     StringBuffer roomName;
     Integer roomArea;
     Integer roomHeidth;

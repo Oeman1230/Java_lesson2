@@ -3,6 +3,7 @@ package lession_pack;
 public class objGiraffe {
     objGiraffe(StringBuffer name, Integer heidth, Integer size, Integer age, StringBuffer favoriteFood)
     {
+
         girName.append(name);
         girHeidth = heidth;
         girSize = size;
