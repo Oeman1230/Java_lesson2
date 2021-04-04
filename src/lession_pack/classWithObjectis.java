@@ -53,5 +53,16 @@ public class classWithObjectis {
                 System.out.println("здесь никого нет");
             }
         }
+
+        @Override
+        public String toString() {
+            return "objRoom{" +
+                    "roomName=" + roomName +
+                    ", roomArea=" + roomArea +
+                    ", roomHeidth=" + roomHeidth +
+                    ", roomWindowsCount=" + roomWindowsCount +
+                    ", roomCreaturesCount=" + roomCreaturesCount +
+                    '}';
+        }
     }
 }
