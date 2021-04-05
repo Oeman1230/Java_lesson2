@@ -50,4 +50,19 @@ public class objGiraffe {
             girHeidth *= 2;
         }
     }
+    public void girRideGirrafe(Integer craatureSize, StringBuffer name)
+    {
+        if(girSize < craatureSize)
+        {
+            System.out.println("Жираф катает на себе существо:"+name);
+        }
+        else
+        {
+            System.out.println("Жираф не может поднять это");
+        }
+    }
+    public void girMakeSound()
+    {
+        System.out.println("Жираф мычит");
+    }
 }
