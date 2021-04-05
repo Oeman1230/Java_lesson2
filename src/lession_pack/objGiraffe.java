@@ -1,19 +1,19 @@
 package lession_pack;
 
 public class objGiraffe {
-    objGiraffe(StringBuffer name, Integer heidth, Integer size, Integer age, StringBuffer favoriteFood)
+    objGiraffe(StringBuffer name, Integer heidth, Integer size, StringBuffer favoriteFood)
     {
 
         girName.append(name.substring(0));
         girHeidth = heidth;
         girSize = size;
-        girAge = age;
         girFavoriteFood.append(favoriteFood.substring(0));
+        headUp = true;
     }
     StringBuffer girName = new StringBuffer();
     Integer girHeidth;
     Integer girSize;
-    Integer girAge;
+    boolean headUp;
     StringBuffer girFavoriteFood = new StringBuffer() ;
     public void girGiveName(StringBuffer newName)
     {
@@ -33,6 +33,21 @@ public class objGiraffe {
         {
             System.out.println("Жираф кушает");
             girSize++;
+        }
+    }
+    public void girHeadPosChange()
+    {
+        if(headUp = true)
+        {
+            System.out.println("Жираф опустил голову");
+            headUp = false;
+            girHeidth /= 2;
+        }
+        else
+        {
+            System.out.println("Жираф поднял голову");
+            headUp = true;
+            girHeidth *= 2;
         }
     }
 }
