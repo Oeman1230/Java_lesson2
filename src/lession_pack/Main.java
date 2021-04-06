@@ -27,14 +27,14 @@ public class Main {
 	Integer key;
 	j = 0;
 	i = 0;
+
+		while(i != 1)
+	{
 		System.out.println("Кого вы хотите посмотреть?");
 		System.out.println(lookHum);
 		System.out.println(lookGir);
 		System.out.println(lookRoom);
-		System.out.println("Выход");
-		while(i != 1)
-	{
-
+		System.out.println("Выход //из программы");
 		keybuffer.delete(0,keybuffer.length());
 
 		keybuffer.append(keyboard.nextLine());
@@ -49,6 +49,7 @@ public class Main {
 				System.out.println(giraffe.toString());
 
 				System.out.println("Выберите действие:");
+				System.out.println(lookGir);
 				System.out.println("Дать имя жирафу:");
 				System.out.println("Покормить жирафа");
 				System.out.println("Поднять или опустить голову");
@@ -62,16 +63,54 @@ public class Main {
 					j = 1;
 					break;
 				}
+				if(keybuffer.toString().equals(lookGir.toString()))
+				{
+					System.out.println(giraffe.toString());
+				}
+				if(keybuffer.toString().equals("Покормить жирафа"))
+				{
+					System.out.println("Чем?");
+					while (true)
+					{
+						System.out.println("Доступная еда:");
+						System.out.println("Еда 1:"+food1);
+						System.out.println("Еда 2:"+food2);
+						System.out.println("Еда 3:"+food3);
+						System.out.println("Выход");
+						keybuffer.delete(0,keybuffer.length());
+						keybuffer.append(keyboard.nextLine());
+						if(keybuffer.toString().equals("Еда 1"))
+						{
+							giraffe.girFeedGiraffe(food1);
+							break;
+						}
+						if(keybuffer.toString().equals("Еда 2"))
+						{
+							giraffe.girFeedGiraffe(food2);
+							break;
+						}
+						if(keybuffer.toString().equals("Еда 3"))
+						{
+							giraffe.girFeedGiraffe(food3);
+							break;
+						}
+						if(keybuffer.toString().equals(DoExit.toString()))
+						{
+							break;
+						}
+					}
+				}
 				if(keybuffer.toString().equals("Дать имя жирафу")) {
 					while (true)
 					{
-						keybuffer.delete(0,keybuffer.length());
-						keybuffer.append(keyboard.nextLine());
+
 						System.out.println("Доступные имена:");
 						System.out.println("Имя 1:"+name1);
 						System.out.println("Имя 2:"+name2);
 						System.out.println("Имя 3:"+name3);
 						System.out.println("Выход");
+						keybuffer.delete(0,keybuffer.length());
+						keybuffer.append(keyboard.nextLine());
 						if(keybuffer.toString().equals("Имя 1"))
 						{
 							giraffe.girGiveName(name1);
@@ -92,9 +131,9 @@ public class Main {
 							break;
 						}
 					}
-				if(keybuffer.toString().equals("Покормить жирафа"))
+				if(keybuffer.toString().equals("Послушать жирафа"))
 				{
-
+					giraffe.girMakeSound();
 					break;
 				}
 

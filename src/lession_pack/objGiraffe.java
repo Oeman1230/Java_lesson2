@@ -24,7 +24,7 @@ public class objGiraffe {
     }
     public void girFeedGiraffe(StringBuffer food)
     {
-        if(food == girFavoriteFood)
+        if(girFavoriteFood.toString().equals(food.toString()))
         {
             System.out.println("Жирафу нравится еда");
             girMakeSound();
