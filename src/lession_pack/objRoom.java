@@ -2,8 +2,12 @@ package lession_pack;
 
 public class objRoom
 {
-    objRoom(){
-
+    objRoom(StringBuffer name, Integer area, Integer heidth, Integer windows){
+        roomName.append(name.substring(0));
+        roomArea = area;
+        roomHeidth = heidth;
+        roomWindowsCount = windows;
+        roomCreaturesCount = 0;
     }
 
 

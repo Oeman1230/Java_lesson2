@@ -21,7 +21,7 @@ public class objHuman {
         humSize --;
     }
     public void humGetFood() {
-        System.out.println(humName.substring(0) + "Плотно питается");
+        System.out.println(humName.substring(0) + " Плотно питается");
         humSize += 3;
     }
     public void humPetCreature(objGiraffe giraffe)
@@ -35,5 +35,16 @@ public class objHuman {
     public void humGoOutRoom(objRoom room)
     {
         room.roomWentOut(humName);
+    }
+
+    @Override
+    public String toString() {
+        return "Посмотрите на этого человека!" +
+                "Его зовут:" + humName +
+                ", его пол: " + humGender +
+                ", Его размер: " + humSize +
+                ", Его рост: " + humHeidth +
+                ", Его возраст:" + humAge +
+                '}';
     }
 }

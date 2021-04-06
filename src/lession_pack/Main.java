@@ -11,12 +11,14 @@ public class Main {
 		StringBuffer name1 = new StringBuffer("Паша");
 		StringBuffer name2 = new StringBuffer("Коля");
 		StringBuffer name3 = new StringBuffer("Влад");
+		StringBuffer roomName = new StringBuffer("Зоо магазин");
 		StringBuffer food1 = new StringBuffer("Мясо");
 		StringBuffer food2 = new StringBuffer("Листья");
 		StringBuffer food3 = new StringBuffer("Яблоки");
 		StringBuffer gender = new StringBuffer("male");
 	objGiraffe giraffe = new objGiraffe(name2,100,15, food2);
 	objHuman human = new objHuman(name1, gender,5,10, 20);
+	objRoom room = new objRoom(roomName,11, 52, 3);
 	StringBuffer lookGir = new StringBuffer("Посмотреть жирафа");
 	StringBuffer lookHum = new StringBuffer("Посмотреть человека");
 	StringBuffer lookRoom = new StringBuffer("Посмотреть комнату");
@@ -40,7 +42,7 @@ public class Main {
 		keybuffer.append(keyboard.nextLine());
 		System.out.println(keybuffer);
 
-///////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 		if(keybuffer.toString().equals(lookGir.toString()))
 		{
 			while (j!=1)
@@ -146,19 +148,45 @@ public class Main {
 			}
 			continue;
 		}
-///////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 		if(keybuffer.toString().equals(lookHum.toString()))
 		{
-			System.out.println("human actions");
+			while(true)
+			{
+				System.out.println(human.toString());
+
+				System.out.println("Выберите действие:");
+				System.out.println("Покормить человека");
+				System.out.println("Потренироваться");
+				System.out.println("Погладить жирафа");
+				System.out.println("Пойти в комнату");
+				System.out.println("Выйти из комнаты");
+				System.out.println("Выход");
+				keybuffer.delete(0,keybuffer.length());
+				keybuffer.append(keyboard.nextLine());
+				if(keybuffer.toString().equals("Покормить человека"))
+				{
+					human.humGetFood();
+				}
+				if(keybuffer.toString().equals("Потренироваться"))
+				{
+					human.humDoTranning();
+				}
+				if(keybuffer.toString().equals(DoExit.toString()))
+				{
+					break;
+				}
+
+			}
 			continue;
 		}
-///////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 		if(keybuffer.toString().equals(lookRoom.toString()))
 		{
 			System.out.println("room actions");
 			continue;
 		}
-///////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 		if(keybuffer.toString().equals(DoExit.toString()))
 		{
 			i = 1;
