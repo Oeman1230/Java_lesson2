@@ -48,6 +48,7 @@ public class Main {
 				System.out.println(giraffe.toString());
 
 				System.out.println("Выберите действие:");
+				System.out.println(lookGir);
 				System.out.println("Дать имя жирафу:");
 				System.out.println("Покормить жирафа");
 				System.out.println("Поднять или опустить голову");
@@ -64,6 +65,10 @@ public class Main {
 				{
 					j = 1;
 					break;
+				}
+				if(keybuffer.toString().equals(lookGir.toString()))
+				{
+					System.out.println(giraffe.toString());
 				}
 				if(keybuffer.toString().equals("Послушать жирафа"))
 				{

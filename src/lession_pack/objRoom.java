@@ -2,8 +2,12 @@ package lession_pack;
 
 public class objRoom
 {
-    objRoom(){
-
+    objRoom(StringBuffer name, Integer area, Integer heidth, Integer windows){
+        roomName.append(name.substring(0));
+        roomArea = area;
+        roomHeidth = heidth;
+        roomWindowsCount = windows;
+        roomCreaturesCount = 0;
     }
 
 
@@ -20,10 +24,14 @@ public class objRoom
             System.out.println("В комнату пришел(а)");
             System.out.println(CreatureName);
         }
+        else
+        {
+            System.out.println("Существо большое или высокое");
+        }
     }
     public void roomAddWindow(Integer winCount){
         roomWindowsCount += winCount;
-        System.out.println("добавлено" + winCount+ "окон" );
+        System.out.println("добавлено " + winCount+ " окон" );
     }
     public void roomAddArea(Integer addArea){
         roomArea += addArea;
@@ -31,9 +39,9 @@ public class objRoom
     }
     public void roomParty()
     {
-        if(roomWindowsCount > 2)
+        if(roomWindowsCount >= 2)
         {
-            System.out.println("Вечеринка началась с "+ roomWindowsCount+ "существами");
+            System.out.println("Вечеринка началась с "+ roomCreaturesCount+ " существами");
         }
         else
         {
@@ -56,12 +64,12 @@ public class objRoom
 
     @Override
     public String toString() {
-        return "objRoom{" +
-                "roomName=" + roomName +
-                ", roomArea=" + roomArea +
-                ", roomHeidth=" + roomHeidth +
-                ", roomWindowsCount=" + roomWindowsCount +
-                ", roomCreaturesCount=" + roomCreaturesCount +
+        return "Посмотрите на эту комнату!" +
+                "Её название: " + roomName +
+                ", Её площадь: " + roomArea +
+                ", Её высота: " + roomHeidth +
+                ",Количество окон: " + roomWindowsCount +
+                ", Количество существ внутри: " + roomCreaturesCount +
                 '}';
     }
 }
