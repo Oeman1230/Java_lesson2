@@ -53,7 +53,7 @@ public class objGiraffe {
     }
     public void girRideGirrafe(Integer craatureSize, StringBuffer name)
     {
-        if(girSize < craatureSize)
+        if(girSize > craatureSize)
         {
             System.out.println("Жираф катает на себе существо:"+name);
         }

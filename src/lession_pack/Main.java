@@ -14,9 +14,9 @@ public class Main {
 		StringBuffer food1 = new StringBuffer("Мясо");
 		StringBuffer food2 = new StringBuffer("Листья");
 		StringBuffer food3 = new StringBuffer("Яблоки");
-
+		StringBuffer gender = new StringBuffer("male");
 	objGiraffe giraffe = new objGiraffe(name2,100,15, food2);
-
+	objHuman human = new objHuman(name1, gender,5,10, 20);
 	StringBuffer lookGir = new StringBuffer("Посмотреть жирафа");
 	StringBuffer lookHum = new StringBuffer("Посмотреть человека");
 	StringBuffer lookRoom = new StringBuffer("Посмотреть комнату");
@@ -43,7 +43,6 @@ public class Main {
 ///////////////////////////////////////
 		if(keybuffer.toString().equals(lookGir.toString()))
 		{
-			System.out.println("giraffe actions");
 			while (j!=1)
 			{
 				System.out.println(giraffe.toString());
@@ -53,11 +52,15 @@ public class Main {
 				System.out.println("Дать имя жирафу:");
 				System.out.println("Покормить жирафа");
 				System.out.println("Поднять или опустить голову");
-				System.out.println("Покатать кого нибудь на жирафе");
+				System.out.println("Покатать на жирафе");
 				System.out.println("Послушать жирафа");
 				System.out.println("Выход");
 				keybuffer.delete(0,keybuffer.length());
 				keybuffer.append(keyboard.nextLine());
+				if(keybuffer.toString().equals("Покатать на жирафе"))
+				{
+					giraffe.girRideGirrafe(human.humSize, human.humName);
+				}
 				if(keybuffer.toString().equals(DoExit.toString()))
 				{
 					j = 1;
@@ -66,6 +69,14 @@ public class Main {
 				if(keybuffer.toString().equals(lookGir.toString()))
 				{
 					System.out.println(giraffe.toString());
+				}
+				if(keybuffer.toString().equals("Послушать жирафа"))
+				{
+					giraffe.girMakeSound();
+				}
+				if(keybuffer.toString().equals("Поднять или опустить голову"))
+				{
+					giraffe.girHeadPosChange();
 				}
 				if(keybuffer.toString().equals("Покормить жирафа"))
 				{
@@ -131,15 +142,7 @@ public class Main {
 							break;
 						}
 					}
-				if(keybuffer.toString().equals("Послушать жирафа"))
-				{
-					giraffe.girMakeSound();
-					break;
 				}
-
-
-				}
-				break;
 			}
 			continue;
 		}
