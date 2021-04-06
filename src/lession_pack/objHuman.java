@@ -17,7 +17,7 @@ public class objHuman {
 
     public void humDoTranning()
     {
-        System.out.println(humName.substring(0) + "занимается физкультурой");
+        System.out.println(humName.substring(0) + " занимается физкультурой");
         humSize --;
     }
     public void humGetFood() {
@@ -26,7 +26,7 @@ public class objHuman {
     }
     public void humPetCreature(objGiraffe giraffe)
     {
-        System.out.println("Жираф"+giraffe.girName.substring(0)+"получает поглаживания");
+        System.out.println("Жираф "+giraffe.girName.substring(0)+" получает поглаживания");
     }
     public void humGoToRoom(objRoom room)
     {

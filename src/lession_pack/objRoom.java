@@ -31,7 +31,7 @@ public class objRoom
     }
     public void roomAddWindow(Integer winCount){
         roomWindowsCount += winCount;
-        System.out.println("добавлено" + winCount+ "окон" );
+        System.out.println("добавлено " + winCount+ " окон" );
     }
     public void roomAddArea(Integer addArea){
         roomArea += addArea;
@@ -41,7 +41,7 @@ public class objRoom
     {
         if(roomWindowsCount >= 2)
         {
-            System.out.println("Вечеринка началась с "+ roomWindowsCount+ "существами");
+            System.out.println("Вечеринка началась с "+ roomCreaturesCount+ " существами");
         }
         else
         {
@@ -64,12 +64,12 @@ public class objRoom
 
     @Override
     public String toString() {
-        return "objRoom{" +
-                "roomName=" + roomName +
-                ", roomArea=" + roomArea +
-                ", roomHeidth=" + roomHeidth +
-                ", roomWindowsCount=" + roomWindowsCount +
-                ", roomCreaturesCount=" + roomCreaturesCount +
+        return "Посмотрите на эту комнату!" +
+                "Её название: " + roomName +
+                ", Её площадь: " + roomArea +
+                ", Её высота: " + roomHeidth +
+                ",Количество окон: " + roomWindowsCount +
+                ", Количество существ внутри: " + roomCreaturesCount +
                 '}';
     }
 }
