@@ -28,13 +28,24 @@ public class Main {
 	{
 
 		keybuffer.delete(0,keybuffer.length());
-		keybuffer.append(keyboard.next());
+
+		keybuffer.append(keyboard.nextLine());
 		System.out.println(keybuffer);
 
 
 		if(keybuffer.toString().equals(lookGir.toString()))
 		{
-			System.out.println("giraffe action check");
+			System.out.println("giraffe actions");
+			continue;
+		}
+		if(keybuffer.toString().equals(lookHum.toString()))
+		{
+			System.out.println("human actions");
+			continue;
+		}
+		if(keybuffer.toString().equals(lookRoom.toString()))
+		{
+			System.out.println("room actions");
 			continue;
 		}
 		if(keybuffer.toString().equals(DoExit.toString()))
