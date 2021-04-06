@@ -16,6 +16,7 @@ public class objRoom
     Integer roomHeidth;
     Integer roomWindowsCount;
     Integer roomCreaturesCount;
+
     public void roomAddCreature(Integer creatureHeidth, Integer creatureSize, StringBuffer CreatureName)
     {
         if(creatureHeidth < roomHeidth && creatureSize < roomArea)
@@ -29,14 +30,17 @@ public class objRoom
             System.out.println("Существо большое или высокое");
         }
     }
+
     public void roomAddWindow(Integer winCount){
         roomWindowsCount += winCount;
         System.out.println("добавлено " + winCount+ " окон" );
     }
+
     public void roomAddArea(Integer addArea){
         roomArea += addArea;
         System.out.println("Добавлено" + addArea +"Квадратных метров");
     }
+
     public void roomParty()
     {
         if(roomWindowsCount >= 2)

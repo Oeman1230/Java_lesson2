@@ -22,6 +22,7 @@ public class objGiraffe {
         System.out.println(girName);
 
     }
+
     public void girFeedGiraffe(StringBuffer food)
     {
         if(girFavoriteFood.toString().equals(food.toString()))
