@@ -4,20 +4,28 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
-	StringBuffer name1 = new StringBuffer("kolya");
-	StringBuffer name2 = new StringBuffer("Pasha");
-	StringBuffer favFod = new StringBuffer("tres");
+
 	Scanner keyboard = new Scanner(System.in);
-	objGiraffe giraffe = new objGiraffe(name1, 100, 10, favFod);
+		StringBuffer name1 = new StringBuffer("Паша");
+		StringBuffer name2 = new StringBuffer("Коля");
+		StringBuffer name3 = new StringBuffer("Влад");
+		StringBuffer food1 = new StringBuffer("Мясо");
+		StringBuffer food2 = new StringBuffer("Листья");
+		StringBuffer food3 = new StringBuffer("Яблоки");
+
+	objGiraffe giraffe = new objGiraffe(name2,100,15, food2);
 
 	StringBuffer lookGir = new StringBuffer("Посмотреть жирафа");
 	StringBuffer lookHum = new StringBuffer("Посмотреть человека");
 	StringBuffer lookRoom = new StringBuffer("Посмотреть комнату");
 	StringBuffer DoExit = new StringBuffer("Выход");
-	giraffe.girGiveName(name2);
 	StringBuffer keybuffer = new StringBuffer();
 	Integer i;
+	Integer j;
+	Integer key;
+	j = 0;
 	i = 0;
 		System.out.println("Кого вы хотите посмотреть?");
 		System.out.println(lookHum);
@@ -32,22 +40,83 @@ public class Main {
 		keybuffer.append(keyboard.nextLine());
 		System.out.println(keybuffer);
 
-
+///////////////////////////////////////
 		if(keybuffer.toString().equals(lookGir.toString()))
 		{
 			System.out.println("giraffe actions");
+			while (j!=1)
+			{
+				System.out.println(giraffe.toString());
+
+				System.out.println("Выберите действие:");
+				System.out.println("Дать имя жирафу:");
+				System.out.println("Покормить жирафа");
+				System.out.println("Поднять или опустить голову");
+				System.out.println("Покатать кого нибудь на жирафе");
+				System.out.println("Послушать жирафа");
+				System.out.println("Выход");
+				keybuffer.delete(0,keybuffer.length());
+				keybuffer.append(keyboard.nextLine());
+				if(keybuffer.toString().equals(DoExit.toString()))
+				{
+					j = 1;
+					break;
+				}
+				if(keybuffer.toString().equals("Дать имя жирафу")) {
+					while (true)
+					{
+						keybuffer.delete(0,keybuffer.length());
+						keybuffer.append(keyboard.nextLine());
+						System.out.println("Доступные имена:");
+						System.out.println("Имя 1:"+name1);
+						System.out.println("Имя 2:"+name2);
+						System.out.println("Имя 3:"+name3);
+						System.out.println("Выход");
+						if(keybuffer.toString().equals("Имя 1"))
+						{
+							giraffe.girGiveName(name1);
+							break;
+						}
+						if(keybuffer.toString().equals("Имя 2"))
+						{
+							giraffe.girGiveName(name2);
+							break;
+						}
+						if(keybuffer.toString().equals("Имя 3"))
+						{
+							giraffe.girGiveName(name3);
+							break;
+						}
+						if(keybuffer.toString().equals(DoExit.toString()))
+						{
+							break;
+						}
+					}
+				if(keybuffer.toString().equals("Покормить жирафа"))
+				{
+
+					break;
+				}
+
+
+				}
+				break;
+			}
 			continue;
 		}
+///////////////////////////////////////
 		if(keybuffer.toString().equals(lookHum.toString()))
 		{
 			System.out.println("human actions");
 			continue;
 		}
+///////////////////////////////////////
 		if(keybuffer.toString().equals(lookRoom.toString()))
 		{
 			System.out.println("room actions");
 			continue;
 		}
+///////////////////////////////////////
 		if(keybuffer.toString().equals(DoExit.toString()))
 		{
 			i = 1;
@@ -56,4 +125,5 @@ public class Main {
 		System.out.println("Неверная комманда");
 	}
     }
+
 }

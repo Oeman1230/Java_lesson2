@@ -27,6 +27,7 @@ public class objGiraffe {
         if(food == girFavoriteFood)
         {
             System.out.println("Жирафу нравится еда");
+            girMakeSound();
             girSize+=2;
         }
         else
@@ -64,5 +65,16 @@ public class objGiraffe {
     public void girMakeSound()
     {
         System.out.println("Жираф мычит");
+    }
+
+    @Override
+    public String toString() {
+        return "Посмотрите, какой жираф:" +
+                "Его зовут: " + girName +
+                ", его высота: " + girHeidth +
+                ", его ширина: " + girSize +
+                ", голова поднята?: " + headUp +
+                ", его любимая еда: " + girFavoriteFood +
+                '}';
     }
 }
