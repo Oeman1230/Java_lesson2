@@ -24,6 +24,10 @@ public class objRoom
             System.out.println("В комнату пришел(а)");
             System.out.println(CreatureName);
         }
+        else
+        {
+            System.out.println("Существо большое или высокое");
+        }
     }
     public void roomAddWindow(Integer winCount){
         roomWindowsCount += winCount;
@@ -35,7 +39,7 @@ public class objRoom
     }
     public void roomParty()
     {
-        if(roomWindowsCount > 2)
+        if(roomWindowsCount >= 2)
         {
             System.out.println("Вечеринка началась с "+ roomWindowsCount+ "существами");
         }

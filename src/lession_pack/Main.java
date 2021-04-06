@@ -176,6 +176,14 @@ public class Main {
 				{
 					break;
 				}
+				if(keybuffer.toString().equals("Пойти в комнату"))
+				{
+					human.humGoToRoom(room);
+				}
+				if(keybuffer.toString().equals("Выйти из комнаты"))
+				{
+					human.humGoOutRoom(room);
+				}
 
 			}
 			continue;
